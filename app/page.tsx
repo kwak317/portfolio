@@ -266,6 +266,61 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section project-section store-project-section">
+        <div className="section-copy">
+          <p className="section-label">Personal Project</p>
+          <h2>컴퓨터 주변기기 매장 운영 사이트</h2>
+          <p>
+            컴퓨터 주변기기 매장의 상품과 운영 정보를 한눈에 확인하고 효율적으로
+            관리할 수 있도록 제작한 웹 서비스입니다. Streamlit과 Pandas를 활용해
+            실제 매장 업무에 필요한 정보를 직관적으로 구성했습니다.
+          </p>
+          <div
+            className="project-links"
+            aria-label="컴퓨터 주변기기 매장 프로젝트 링크"
+          >
+            <a
+              className="button primary"
+              href="https://streamline-fewhcwgoquxqmznnyr9yx8.streamlit.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              서비스 직접 체험하기
+              <ArrowRight size={18} />
+            </a>
+          </div>
+        </div>
+        <div className="project-card">
+          <div className="project-card-header">
+            <Database size={28} />
+            <span>Computer Store Management Project</span>
+          </div>
+          <div className="project-steps">
+            <article>
+              <strong>상품 관리</strong>
+              <p>
+                컴퓨터 주변기기 상품 정보를 정리하고 필요한 항목을 빠르게 확인할
+                수 있도록 구성했습니다.
+              </p>
+            </article>
+            <article>
+              <strong>매장 운영</strong>
+              <p>
+                매장 운영에 필요한 데이터를 한 화면에서 확인할 수 있어 반복적인
+                관리 업무를 줄여줍니다.
+              </p>
+            </article>
+            <article>
+              <strong>데이터 확인</strong>
+              <p>
+                상품과 운영 현황을 이해하기 쉬운 형태로 보여주어 빠른 판단을
+                돕습니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="section strength-section">
         <div className="section-copy centered">
           <p className="section-label">Strength</p>
