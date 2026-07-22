@@ -321,6 +321,62 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section project-section store-project-section">
+        <div className="section-copy">
+          <p className="section-label">AI Model Showcase</p>
+          <h2>이미지 분류와 자전거 수요 예측</h2>
+          <p>
+            PyTorch로 학습한 MNIST 이미지 분류 CNN과 서울 자전거 수요 회귀
+            모델을 하나의 Streamlit 쇼케이스로 구성했습니다. 숫자 이미지의 예측
+            결과와 날씨·시간 조건에 따른 시간당 자전거 대여량을 직접 확인할 수
+            있습니다.
+          </p>
+          <div
+            className="project-links"
+            aria-label="딥러닝 모델 쇼케이스 프로젝트 링크"
+          >
+            <a
+              className="button primary"
+              href="https://miniprojectgit-324deds6vhyhjkm7nbrqpe.streamlit.app/회귀_자전거"
+              target="_blank"
+              rel="noreferrer"
+            >
+              자전거 수요 예측 체험하기
+              <ArrowRight size={18} />
+            </a>
+          </div>
+        </div>
+        <div className="project-card">
+          <div className="project-card-header">
+            <BrainCircuit size={28} />
+            <span>Deep Learning Model Showcase</span>
+          </div>
+          <div className="project-steps">
+            <article>
+              <strong>이미지 분류</strong>
+              <p>
+                28×28 숫자 이미지를 CNN으로 분석해 0부터 9까지의 예측 확률과
+                신뢰도를 보여줍니다.
+              </p>
+            </article>
+            <article>
+              <strong>수요 회귀</strong>
+              <p>
+                시간과 날씨 조건을 입력하면 학습한 회귀 모델이 예상 자전거
+                대여량을 계산합니다.
+              </p>
+            </article>
+            <article>
+              <strong>결과 시각화</strong>
+              <p>
+                시간대별 수요 곡선과 조건 민감도 그래프로 예측 결과의 변화를
+                직관적으로 확인할 수 있습니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="section strength-section">
         <div className="section-copy centered">
           <p className="section-label">Strength</p>
