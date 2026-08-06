@@ -377,6 +377,58 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section project-section store-project-section">
+        <div className="section-copy">
+          <p className="section-label">AI Music Analysis</p>
+          <h2>Music Lens · 음악 장르 예측기</h2>
+          <p>
+            오디오 파일의 리듬·음색·주파수 특징을 분석해 장르와 신뢰도를
+            예측하는 AI 음악 분석 서비스입니다. 여러 곡의 분석 결과를 비교하고,
+            BPM·에너지·스펙트럼 정보를 시각적으로 확인할 수 있습니다.
+          </p>
+          <div className="project-links" aria-label="Music Lens 프로젝트 링크">
+            <a
+              className="button primary"
+              href="https://aimusic-aa9mzave3aebemjsfkyrtg.streamlit.app"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Music Lens 체험하기
+              <ArrowRight size={18} />
+            </a>
+          </div>
+        </div>
+        <div className="project-card">
+          <div className="project-card-header">
+            <BrainCircuit size={28} />
+            <span>Music Genre Analysis Project</span>
+          </div>
+          <div className="project-steps">
+            <article>
+              <strong>오디오 특징 추출</strong>
+              <p>
+                WAV·MP3·M4A 등 오디오에서 BPM, 에너지, 스펙트럼과 MFCC 특징을
+                추출해 분석에 활용합니다.
+              </p>
+            </article>
+            <article>
+              <strong>장르 예측과 구간 분석</strong>
+              <p>
+                학습 모델이 장르별 확률을 제공하고, 3초 단위 타임라인으로 곡의
+                구간별 예측 결과를 보여줍니다.
+              </p>
+            </article>
+            <article>
+              <strong>비교와 결과 공유</strong>
+              <p>
+                레이더 차트와 멜스펙트로그램으로 특징을 비교하고, CSV 다운로드와
+                공유 링크로 분석 결과를 활용할 수 있습니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="section strength-section">
         <div className="section-copy centered">
           <p className="section-label">Strength</p>
