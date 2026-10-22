@@ -144,25 +144,4 @@ export const projects: Project[] = [
       { label: "GitHub", href: "https://github.com/kwak317/malhaebom" },
     ],
   },
-  {
-    id: "store",
-    name: "주변기기 매장 운영",
-    kind: "Solo Project",
-    team: "개인 프로젝트",
-    oneLine: "컴퓨터 주변기기 매장의 상품과 운영 정보를 한 화면에서 관리하는 웹 앱",
-    tags: [
-      { name: "Python", tone: "blue" },
-      { name: "Streamlit", tone: "rose" },
-      { name: "Pandas", tone: "violet" },
-    ],
-    summary:
-      "컴퓨터 주변기기 매장의 상품과 운영 정보를 한눈에 확인하고 효율적으로 관리할 수 있도록 만든 웹 서비스입니다. 바로 써볼 수 있게 배포해 두었습니다.",
-    points: [
-      { title: "상품 관리", text: "상품 정보를 정리해 필요한 항목을 빠르게 찾을 수 있게 구성했습니다." },
-      { title: "매장 운영", text: "운영에 필요한 데이터를 한 화면에 모아 반복 관리 업무를 줄였습니다." },
-      { title: "데이터 확인", text: "상품과 운영 현황을 읽기 쉬운 형태로 보여줘 빠른 판단을 돕습니다." },
-    ],
-    stack: ["Python", "Streamlit", "Pandas"],
-    links: [{ label: "서비스 직접 써보기", href: "https://streamline-fewhcwgoquxqmznnyr9yx8.streamlit.app" }],
-  },
 ];

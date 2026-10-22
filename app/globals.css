@@ -199,13 +199,6 @@ em { font-style: normal; color: var(--accent); }
 .thumb-malhaebom p { font-size: clamp(0.95rem, 1.6vw, 1.25rem); font-weight: 500; max-width: 30em; }
 .thumb mark { color: inherit; background: linear-gradient(transparent 55%, rgba(255, 214, 79, 0.45) 55%); }
 .thumb-chip { align-self: flex-start; font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
-.thumb-store { background: linear-gradient(150deg, #2a1b22, #17171b 70%); flex-direction: row; align-items: flex-end; }
-.thumb-bars { flex: 1.3; display: flex; align-items: flex-end; gap: 8%; height: 70%; }
-.thumb-bars span { flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(#ff6b7d, color-mix(in srgb, #ff6b7d 30%, transparent)); }
-.thumb-rows { flex: 1; display: grid; gap: 10px; }
-.thumb-rows span { height: 10px; border-radius: 5px; background: rgba(255, 255, 255, 0.12); }
-.thumb-rows span:nth-child(2) { width: 70%; }
-.thumb-rows span:nth-child(3) { width: 85%; }
 
 /* Detail dialog */
 .detail {

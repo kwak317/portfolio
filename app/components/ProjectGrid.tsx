@@ -19,20 +19,7 @@ function Thumb({ id }: { id: string }) {
       </div>
     );
   }
-  return (
-    <div className="thumb thumb-store" aria-hidden="true">
-      <div className="thumb-bars">
-        {[62, 88, 45, 72, 54, 96, 38].map((h, i) => (
-          <span key={i} style={{ height: `${h}%` }} />
-        ))}
-      </div>
-      <div className="thumb-rows">
-        <span />
-        <span />
-        <span />
-      </div>
-    </div>
-  );
+  return null;
 }
 
 export function ProjectGrid({ projects }: { projects: Project[] }) {
