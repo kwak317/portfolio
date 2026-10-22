@@ -145,32 +145,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "pc-quote",
-    name: "AI 컴퓨터 견적",
-    kind: "Team Project",
-    team: "5Headers 팀, 웹개발 과정",
-    oneLine: "용도와 예산을 입력하면 GPT가 부품 조합을 추천하고 최저가·주변 매장까지 이어주는 서비스",
-    tags: [
-      { name: "React", tone: "blue" },
-      { name: "Spring Boot", tone: "green" },
-      { name: "MySQL", tone: "teal" },
-      { name: "OpenAI API", tone: "violet" },
-    ],
-    summary:
-      "사용자가 용도와 예산을 입력하면 GPT가 맞춤형 부품 조합을 추천하고, 온라인 최저가와 주변 오프라인 매장까지 이어주는 컴퓨터 견적 웹서비스입니다.",
-    points: [
-      { title: "풀려는 문제", text: "목적과 예산에 맞는 부품을 직접 비교하고 고르는 견적 과정이 복잡했습니다." },
-      { title: "AI 활용", text: "GPT API로 요구사항을 분석해 견적을 만들고, 응답 JSON을 파싱·정제해 보여줍니다. 대화로 추천 부품을 수정할 수도 있습니다." },
-      { title: "구매 연결", text: "네이버 쇼핑 API로 부품별 최저가와 구매 링크를, 카카오맵 API로 근처 오프라인 매장을 안내합니다." },
-      { title: "회원 기능", text: "JWT·소셜 로그인, 견적 저장·즐겨찾기·기록 보기, Firebase 프로필 이미지 업로드를 지원합니다." },
-    ],
-    stack: ["React", "Vite", "Java 17", "Spring Boot", "Spring Security · JWT", "MyBatis", "MySQL", "OpenAI API", "Naver Shopping API", "Kakao Map API", "Firebase"],
-    links: [
-      { label: "프론트엔드 GitHub", href: "https://github.com/5Headers/team_project_frontend" },
-      { label: "백엔드 GitHub", href: "https://github.com/5Headers/team_project_backend" },
-    ],
-  },
-  {
     id: "store",
     name: "주변기기 매장 운영",
     kind: "Solo Project",

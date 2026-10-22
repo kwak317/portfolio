@@ -19,19 +19,6 @@ function Thumb({ id }: { id: string }) {
       </div>
     );
   }
-  if (id === "pc-quote") {
-    return (
-      <div className="thumb thumb-quote" aria-hidden="true">
-        <p className="thumb-ask">게임용, 150만 원 이하로 맞춰줘</p>
-        <ul>
-          <li><span>CPU</span><b>추천</b></li>
-          <li><span>GPU</span><b>추천</b></li>
-          <li><span>RAM</span><b>추천</b></li>
-          <li><span>최저가</span><b>네이버 쇼핑</b></li>
-        </ul>
-      </div>
-    );
-  }
   return (
     <div className="thumb thumb-store" aria-hidden="true">
       <div className="thumb-bars">
