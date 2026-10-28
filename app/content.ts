@@ -23,6 +23,8 @@ export const skillGroups: {
       { name: "Prompt · Skill", mark: "Pr", tone: "violet", text: "판단 기준과 출력 JSON 계약을 설계합니다." },
       { name: "FastMCP", mark: "MC", tone: "rose", text: "에이전트가 쓰는 조회·비교 도구를 만듭니다." },
       { name: "Langfuse", mark: "Lf", tone: "rose", text: "LLM 호출을 관측하고 평가셋으로 품질을 확인합니다." },
+      { name: "LangGraph", mark: "LG", tone: "teal", text: "상태와 분기가 있는 에이전트 흐름을 그래프로 설계합니다." },
+      { name: "RAG", mark: "Rg", tone: "amber", text: "문서를 검색해 LLM 답변의 근거로 연결합니다." },
     ],
   },
   {
