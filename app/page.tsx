@@ -1,7 +1,7 @@
 import { BouncyName, Effects } from "./components/Effects";
 import { ProjectGrid } from "./components/ProjectGrid";
 import { TopNav } from "./components/TopNav";
-import { EMAIL, GITHUB, projects, skillGroups } from "./content";
+import { EMAIL, GITHUB, projects, skillGroups, strengths } from "./content";
 
 function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
   return (
@@ -101,6 +101,24 @@ export default function Home() {
                 </li>
               </ul>
             </aside>
+          </div>
+        </section>
+
+        <section className="wrap section" aria-labelledby="strengths">
+          <SectionTitle id="strengths">STRENGTHS</SectionTitle>
+          <div className="strengths">
+            {strengths.map((item) => (
+              <article className="strength" key={item.title} data-reveal>
+                <p className="strength-en">{item.en}</p>
+                <h3>{item.title}</h3>
+                <p className="strength-claim">{item.claim}</p>
+                <ul>
+                  {item.evidence.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </section>
 
