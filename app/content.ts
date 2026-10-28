@@ -1,6 +1,36 @@
 export const EMAIL = "hojun6901@gmail.com";
 export const GITHUB = "https://github.com/kwak317";
 
+export const strengths: {
+  title: string;
+  en: string;
+  claim: string;
+  evidence: string[];
+}[] = [
+  {
+    title: "협업 능력",
+    en: "COLLABORATION",
+    claim: "3인 팀에서 기획부터 구현, 평가, 문서화까지 맡아 결과물을 함께 완성했습니다.",
+    evidence: [
+      "말해봄 Mk.2를 3인 팀으로 개발해 실제 도메인에 배포하고 운영하고 있습니다.",
+      "서비스 기획에서 범위를 구체화하고 답변 근거 확인 → 코칭 → 재답변 → 비교 흐름을 정리했습니다.",
+      "Docker CPU 재현 환경을 개선해 누구나 같은 환경에서 실행할 수 있게 했습니다.",
+      "운영 소스를 동기화하고 평가·에이전트 보고서를 작성해 작업 결과를 문서로 남겼습니다.",
+    ],
+  },
+  {
+    title: "AI 활용 능력",
+    en: "AI ENGINEERING",
+    claim: "AI를 그냥 호출하는 데서 끝내지 않고, 결과를 검증하고 평가해서 믿고 쓸 수 있게 만듭니다.",
+    evidence: [
+      "면접 코칭 판단 기준, 질문별 Skill, 출력 JSON 계약을 설계하고 개선했습니다.",
+      "LLM 출력 검증과 재시도, 실패 단계별 오류 처리를 백엔드에 구현했습니다.",
+      "FastMCP로 코칭에 필요한 조회·답변 비교 도구를 만들고 접근 제한과 인증을 붙였습니다.",
+      "30건 평가셋과 Langfuse 계측으로 Prompt를 비교하고 반복 평가했습니다.",
+    ],
+  },
+];
+
 export type Tag = { name: string; tone: "blue" | "teal" | "amber" | "rose" | "violet" | "green" };
 
 export const skillGroups: {
