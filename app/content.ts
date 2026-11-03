@@ -203,3 +203,102 @@ export const projects: Project[] = [
     },
   },
 ];
+
+export type MiniProject = {
+  id: string;
+  name: string;
+  kind: string;
+  oneLine: string;
+  features: string[];
+  tags: Tag[];
+  app?: string;
+  code: string;
+};
+
+export const miniProjects: MiniProject[] = [
+  {
+    id: "music-lens",
+    name: "Music Lens",
+    kind: "음악 장르 분류",
+    oneLine: "음악 파일을 올리면 10개 장르 중 어디에 가까운지 예측하고, 그렇게 판단한 소리 특징을 함께 보여 주는 앱입니다.",
+    features: [
+      "librosa로 MFCC·템포·스펙트럼 등 57개 특징을 뽑고, GTZAN으로 학습한 RandomForest로 장르별 확률을 계산합니다.",
+      "멜스펙트로그램, 3초 구간별 장르 변화, BPM·에너지·밝기·리듬감 레이더 차트로 예측 근거를 보여 줍니다.",
+      "여러 곡을 한 번에 비교하고, 예측 이력·피드백 저장·결과 공유 링크를 지원합니다.",
+    ],
+    tags: [
+      { name: "librosa", tone: "teal" },
+      { name: "scikit-learn", tone: "amber" },
+      { name: "Streamlit", tone: "rose" },
+    ],
+    app: "https://aimusic-aa9mzave3aebemjsfkyrtg.streamlit.app",
+    code: "https://github.com/kwak317/ai_music",
+  },
+  {
+    id: "store-dashboard",
+    name: "컴퓨터 주변기기 매장 운영 대시보드",
+    kind: "데이터 대시보드",
+    oneLine: "컴퓨터 소모품 200개 상품 데이터로 매장 현황, 재고, 견적, 고객 추천을 한 화면에서 관리하는 운영 대시보드입니다.",
+    features: [
+      "매출·마진, 월별 방문 추이, 상품군별 재고를 보여 주고 재고 부족 상품은 발주 목록 CSV로 내려받을 수 있습니다.",
+      "고객 니즈에 맞는 상품과 대안을 추천하고, 장바구니로 견적서를 만들며 상담 기록을 남깁니다.",
+      "\"5만원 이하 마우스 찾아줘\" 같은 질문에서 검색어와 가격 조건을 뽑아 검색 도구를 실행하고, 그 과정을 그대로 보여 주는 검색 에이전트를 넣었습니다.",
+    ],
+    tags: [
+      { name: "pandas", tone: "blue" },
+      { name: "Agent", tone: "violet" },
+      { name: "Streamlit", tone: "rose" },
+    ],
+    app: "https://streamline-fewhcwgoquxqmznnyr9yx8.streamlit.app",
+    code: "https://github.com/kwak317/streamline/blob/main/apps/computer_supplies_dashboard.py",
+  },
+  {
+    id: "dl-model-lab",
+    name: "나의 딥러닝 모델 랩",
+    kind: "분류 · 회귀",
+    oneLine: "직접 학습한 PyTorch 모델 두 개, 손글씨 숫자 분류 CNN과 서울 자전거 대여 수요 회귀 모델을 한 앱에서 써 볼 수 있습니다.",
+    features: [
+      "업로드하거나 카메라로 찍은 숫자를 MNIST 형식(28×28)으로 바꿔 CNN이 숫자별 확률을 보여 줍니다.",
+      "시간·기온·습도 등 9개 조건을 슬라이더로 바꾸면 대여량을 예측하고, validation MAE로 예상 오차와 시간대별 수요 곡선을 함께 보여 줍니다.",
+      "촬영한 숫자가 작거나 중심에서 벗어나면 오분류가 늘어나는 한계를 확인하고 데이터 증강을 다음 실험으로 정리했습니다.",
+    ],
+    tags: [
+      { name: "PyTorch", tone: "amber" },
+      { name: "CNN", tone: "teal" },
+      { name: "Streamlit", tone: "rose" },
+    ],
+    code: "https://github.com/kwak317/mini_project/tree/main/showcase",
+  },
+  {
+    id: "clip-fashion",
+    name: "CLIP 패션 검색",
+    kind: "멀티모달 검색",
+    oneLine: "원하는 스타일을 글로 적거나 사진을 올리면 비슷한 패션 아이템을 찾아 주는 멀티모달 검색 앱입니다.",
+    features: [
+      "CLIP(ViT-B/16)으로 패션 이미지를 임베딩해 인덱스를 만들고, 텍스트나 이미지 쿼리와의 유사도로 상위 결과를 고릅니다.",
+      "글과 사진을 같은 벡터 공간에 놓기 때문에 두 가지 검색 방식을 같은 인덱스로 처리합니다.",
+    ],
+    tags: [
+      { name: "CLIP", tone: "violet" },
+      { name: "PyTorch", tone: "amber" },
+      { name: "Streamlit", tone: "rose" },
+    ],
+    code: "https://github.com/kwak317/transformer4-assignment/tree/main/lab6_clip_multimodal_fashion_search",
+  },
+  {
+    id: "blip-caption",
+    name: "BLIP 이미지 캡셔닝",
+    kind: "이미지 → 문장",
+    oneLine: "사진을 올리면 BLIP이 영어 설명 문장을 만들고, 선택하면 NLLB로 한국어 번역까지 해 주는 앱입니다.",
+    features: [
+      "BLIP base와 large 모델을 고를 수 있고, 무료 서버 메모리를 고려해 base를 기본값으로 두었습니다.",
+      "NLLB-200 번역은 선택 기능으로 분리해, 메모리가 부족해도 영어 캡션은 정상적으로 보여 주도록 했습니다.",
+    ],
+    tags: [
+      { name: "BLIP", tone: "blue" },
+      { name: "NLLB", tone: "green" },
+      { name: "Transformers", tone: "violet" },
+    ],
+    code: "https://github.com/kwak317/transformer4-assignment/tree/main/lab9_image_captioning",
+  },
+];

@@ -1,7 +1,7 @@
 import { BouncyName, Effects } from "./components/Effects";
 import { ProjectGrid } from "./components/ProjectGrid";
 import { TopNav } from "./components/TopNav";
-import { EMAIL, GITHUB, projects, skillGroups, strengths } from "./content";
+import { EMAIL, GITHUB, miniProjects, projects, skillGroups, strengths } from "./content";
 
 function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
   return (
@@ -168,6 +168,46 @@ export default function Home() {
         <section className="wrap section" aria-labelledby="project">
           <SectionTitle id="project">PROJECT</SectionTitle>
           <ProjectGrid projects={projects} />
+        </section>
+
+        <section className="wrap section" aria-labelledby="mini">
+          <SectionTitle id="mini">MINI PROJECTS</SectionTitle>
+          <p className="mini-intro" data-reveal>
+            수업과 과제에서 만든 모델을 Streamlit으로 배포해 누구나 직접 써 볼 수 있게 만든 미니 프로젝트입니다.
+          </p>
+          <div className="mini-grid">
+            {miniProjects.map((item) => (
+              <article className="mini" key={item.id} data-reveal>
+                <div className="card-head">
+                  <h3>{item.name}</h3>
+                  <span className="card-kind">{item.kind}</span>
+                </div>
+                <p className="card-line">{item.oneLine}</p>
+                <ul className="mini-features">
+                  {item.features.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <ul className="tags" aria-label="사용 기술">
+                  {item.tags.map((tag) => (
+                    <li key={tag.name} className={`tag tone-${tag.tone}`}>
+                      {tag.name}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mini-links">
+                  {item.app && (
+                    <a className="more" href={item.app} target="_blank" rel="noreferrer">
+                      앱 열기
+                    </a>
+                  )}
+                  <a className="more" href={item.code} target="_blank" rel="noreferrer">
+                    코드 보기
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="wrap section contact" aria-labelledby="contact">
