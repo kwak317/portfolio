@@ -123,6 +123,19 @@ export default function Home() {
                     <p>{item.story.text}</p>
                   </div>
                 )}
+                {item.roles && (
+                  <div className="strength-roles">
+                    <p className="strength-story-label">{item.roles.label}</p>
+                    <ol>
+                      {item.roles.items.map((role) => (
+                        <li key={role.name}>
+                          <strong>{role.name}</strong>
+                          <span>{role.text}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
               </article>
             ))}
           </div>
