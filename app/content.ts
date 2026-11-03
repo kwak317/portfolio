@@ -49,12 +49,12 @@ export const skillGroups: {
   {
     title: "AI · LLM",
     items: [
+      { name: "RAG", mark: "Rg", tone: "amber", text: "문서를 검색해 LLM 답변의 근거로 연결합니다." },
       { name: "LLM API", mark: "AI", tone: "violet", text: "OpenRouter·OpenAI 호출, 출력 검증과 재시도를 다룹니다." },
       { name: "Prompt · Skill", mark: "Pr", tone: "violet", text: "판단 기준과 출력 JSON 계약을 설계합니다." },
       { name: "FastMCP", mark: "MC", tone: "rose", text: "에이전트가 쓰는 조회·비교 도구를 만듭니다." },
       { name: "Langfuse", mark: "Lf", tone: "rose", text: "LLM 호출을 관측하고 평가셋으로 품질을 확인합니다." },
       { name: "LangGraph", mark: "LG", tone: "teal", text: "상태와 분기가 있는 에이전트 흐름을 그래프로 설계합니다." },
-      { name: "RAG", mark: "Rg", tone: "amber", text: "문서를 검색해 LLM 답변의 근거로 연결합니다." },
     ],
   },
   {
@@ -68,9 +68,9 @@ export const skillGroups: {
   {
     title: "FRONT · INFRA",
     items: [
+      { name: "Docker", mark: "Dk", tone: "blue", text: "누구나 같은 환경에서 재현하도록 정리합니다." },
       { name: "React", mark: "Re", tone: "blue", text: "Vite와 함께 서비스 화면과 흐름을 구현합니다." },
       { name: "Streamlit", mark: "St", tone: "rose", text: "데이터 중심 웹 앱을 빠르게 만듭니다." },
-      { name: "Docker", mark: "Dk", tone: "blue", text: "누구나 같은 환경에서 재현하도록 정리합니다." },
       { name: "Vercel · Cloud Run", mark: "Dp", tone: "amber", text: "서비스를 실제 도메인에 배포해 운영합니다." },
     ],
   },
@@ -98,8 +98,10 @@ export const projects: Project[] = [
     team: "3인 팀, malhaebom.xyz 운영 중",
     oneLine: "면접 답변을 녹음하면 답변 속 근거를 바탕으로 코칭해 주는 AI 면접 코칭 에이전트",
     tags: [
-      { name: "Python", tone: "blue" },
+      { name: "RAG", tone: "amber" },
       { name: "FastAPI", tone: "teal" },
+      { name: "Docker", tone: "blue" },
+      { name: "Python", tone: "blue" },
       { name: "FastMCP", tone: "rose" },
       { name: "LLM", tone: "violet" },
       { name: "React", tone: "blue" },
@@ -156,17 +158,18 @@ export const projects: Project[] = [
   },
 ],
     stack: [
+  "RAG",
+  "FastAPI",
+  "Docker",
   "React",
   "TypeScript",
   "Vite",
   "Python",
-  "FastAPI",
   "STT · VAD",
   "FastMCP",
   "LLM (OpenRouter)",
   "Supabase",
   "Langfuse",
-  "Docker",
   "Vercel",
   "Cloud Run",
 ],
