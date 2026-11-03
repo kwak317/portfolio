@@ -91,24 +91,19 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                 </div>
               ))}
             </dl>
-            {open.screens && open.screens.length > 0 && (
+            {open.video && (
               <>
-                <h4>실제 서비스 화면</h4>
-                <ol className="detail-screens">
-                  {open.screens.map((screen, i) => (
-                    <li key={screen.src}>
-                      <a href={screen.src} target="_blank" rel="noreferrer">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={screen.src} alt={screen.title} loading="lazy" />
-                      </a>
-                      <p className="screen-title">
-                        <span>{i + 1}</span>
-                        {screen.title}
-                      </p>
-                      <p className="screen-caption">{screen.caption}</p>
-                    </li>
-                  ))}
-                </ol>
+                <h4>실제 서비스 시연</h4>
+                <video
+                  className="detail-video"
+                  src={open.video.src}
+                  poster={open.video.poster}
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+                <p className="detail-video-caption">{open.video.caption}</p>
               </>
             )}
             {open.roles && (
