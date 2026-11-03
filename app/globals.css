@@ -148,6 +148,16 @@ em { font-style: normal; color: var(--accent); }
 }
 .strength-story-label { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
 .strength-story p:last-child { color: var(--ink); font-size: 0.93rem; line-height: 1.7; }
+.strength-roles {
+  margin-top: 16px; padding: 20px 22px; border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.strength-roles ol { list-style: none; margin: 0; display: grid; gap: 12px; }
+.strength .strength-roles li { padding: 0; border: 0; display: grid; grid-template-columns: 5.5em 1fr; gap: 12px; font-size: 0.93rem; line-height: 1.7; }
+.strength .strength-roles li::before { content: none; }
+.strength-roles strong { color: var(--ink); font-weight: 700; }
+.strength-roles span { color: var(--muted); }
+@media (max-width: 560px) { .strength .strength-roles li { grid-template-columns: 1fr; gap: 2px; } }
 .strength li::before { content: ""; position: absolute; left: 0; top: 1.35em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
 /* Skills */
