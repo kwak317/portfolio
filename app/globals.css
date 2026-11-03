@@ -141,6 +141,13 @@ em { font-style: normal; color: var(--accent); }
 .strength ul { list-style: none; margin-top: 24px; border-top: 1px solid var(--line); }
 .strength li { position: relative; padding: 12px 0 12px 20px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.93rem; }
 .strength li:last-child { border-bottom: 0; padding-bottom: 0; }
+.strength-story {
+  margin-top: 24px; padding: 20px 22px; border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border-left: 3px solid var(--accent);
+}
+.strength-story-label { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-bottom: 8px; }
+.strength-story p:last-child { color: var(--ink); font-size: 0.93rem; line-height: 1.7; }
 .strength li::before { content: ""; position: absolute; left: 0; top: 1.35em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
 /* Skills */
