@@ -171,7 +171,8 @@ export const projects: Project[] = [
   "Cloud Run",
 ],
     links: [
-      { label: "면접 연습 해보기", href: "https://malhaebom.xyz/app/practice" },
+      { label: "로그인 없이 체험하기", href: "/demo/malhaebom" },
+      { label: "실제 서비스에서 연습", href: "https://malhaebom.xyz/app/practice" },
       { label: "서비스 소개", href: "https://malhaebom.xyz/" },
       { label: "GitHub", href: "https://github.com/kwak317/malhaebom" },
     ],
