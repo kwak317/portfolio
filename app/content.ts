@@ -88,6 +88,7 @@ export type Project = {
   roles?: { area: string; work: string }[];
   stack: string[];
   links: { label: string; href: string }[];
+  screens?: { src: string; title: string; caption: string }[];
 };
 
 export const projects: Project[] = [
@@ -178,6 +179,28 @@ export const projects: Project[] = [
       { label: "실제 서비스에서 연습", href: "https://malhaebom.xyz/app/practice" },
       { label: "서비스 소개", href: "https://malhaebom.xyz/" },
       { label: "GitHub", href: "https://github.com/kwak317/malhaebom" },
+    ],
+    screens: [
+      {
+        src: "/malhaebom/01-landing.jpg",
+        title: "서비스 소개",
+        caption: "malhaebom.xyz 첫 화면에서 연습 흐름을 소개하고 바로 연습을 시작합니다.",
+      },
+      {
+        src: "/malhaebom/02-login.jpg",
+        title: "로그인",
+        caption: "게스트 체험 계정이나 Google 계정으로 로그인해 면접 연습 채팅으로 들어갑니다.",
+      },
+      {
+        src: "/malhaebom/03-ncs.jpg",
+        title: "NCS 역량 자기점검",
+        caption: "AI 코치가 NCS 능력단위를 바탕으로 지식·기술·태도 항목을 고르게 하고, 왼쪽 히스토리와 오른쪽 근거 자료실에 기록이 쌓입니다.",
+      },
+      {
+        src: "/malhaebom/04-resume.jpg",
+        title: "이력서 PDF 제출(선택)",
+        caption: "이력서 PDF로 기술과 경험을 정리해 맞는 공고를 찾습니다. 개인정보는 추천에 사용하지 않고, 건너뛸 수도 있습니다.",
+      },
     ],
   },
 ];
