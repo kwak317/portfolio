@@ -117,6 +117,12 @@ export default function Home() {
                     <li key={line}>{line}</li>
                   ))}
                 </ul>
+                {item.story && (
+                  <div className="strength-story">
+                    <p className="strength-story-label">{item.story.label}</p>
+                    <p>{item.story.text}</p>
+                  </div>
+                )}
               </article>
             ))}
           </div>
