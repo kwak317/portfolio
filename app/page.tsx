@@ -120,20 +120,48 @@ export default function Home() {
                 {item.story && (
                   <div className="strength-story">
                     <p className="strength-story-label">{item.story.label}</p>
-                    <p>{item.story.text}</p>
+                    <dl className="story-steps">
+                      {item.story.steps.map((step) => (
+                        <div key={step.label}>
+                          <dt>{step.label}</dt>
+                          <dd>{step.text}</dd>
+                        </div>
+                      ))}
+                    </dl>
                   </div>
                 )}
-                {item.roles && (
-                  <div className="strength-roles">
-                    <p className="strength-story-label">{item.roles.label}</p>
-                    <ol>
-                      {item.roles.items.map((role) => (
-                        <li key={role.name}>
-                          <strong>{role.name}</strong>
-                          <span>{role.text}</span>
+                {item.proof && (
+                  <>
+                    <ul className="proof">
+                      {item.proof.map((p) => (
+                        <li key={p.label}>
+                          <b>{p.value}</b>
+                          <span>{p.label}</span>
                         </li>
                       ))}
-                    </ol>
+                    </ul>
+                    {item.proofNote && <p className="proof-note">{item.proofNote}</p>}
+                  </>
+                )}
+                {item.cases && (
+                  <div className="cases">
+                    <p className="strength-story-label">{item.cases.label}</p>
+                    {item.cases.items.map((c, i) => (
+                      <details className="case" key={c.title} open={i < 2}>
+                        <summary>
+                          <span className="case-title">{c.title}</span>
+                          <span className="case-tag">{c.tag}</span>
+                        </summary>
+                        <dl>
+                          {c.rows.map((row) => (
+                            <div key={row.label}>
+                              <dt>{row.label}</dt>
+                              <dd>{row.text}</dd>
+                            </div>
+                          ))}
+                        </dl>
+                      </details>
+                    ))}
                   </div>
                 )}
               </article>

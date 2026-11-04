@@ -83,6 +83,19 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
             <p className="detail-team">{open.team}</p>
             <h3 id="detail-title">{open.name}</h3>
             <p className="detail-summary">{open.summary}</p>
+            {open.problem && (
+              <>
+                <h4>문제 정의</h4>
+                <dl className="detail-roles detail-problem">
+                  {open.problem.map((row) => (
+                    <div key={row.label}>
+                      <dt>{row.label}</dt>
+                      <dd>{row.text}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </>
+            )}
             <dl className="detail-points">
               {open.points.map((point) => (
                 <div key={point.title}>
@@ -104,6 +117,54 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                   preload="metadata"
                 />
                 <p className="detail-video-caption">{open.video.caption}</p>
+              </>
+            )}
+            {open.architecture && (
+              <>
+                <h4>시스템 구성</h4>
+                <a href={open.architecture.src} target="_blank" rel="noreferrer" className="detail-arch">
+                  <img src={open.architecture.src} alt={open.architecture.alt} loading="lazy" />
+                </a>
+                <p className="detail-video-caption">{open.architecture.caption}</p>
+              </>
+            )}
+            {open.metrics && (
+              <>
+                <h4>평가 결과 · 합성 30건 기준</h4>
+                <p className="detail-note">{open.metrics.note}</p>
+                <dl className="detail-metrics">
+                  {open.metrics.rows.map((row) => (
+                    <div key={row.label}>
+                      <dt>
+                        <span>{row.label}</span>
+                        <b>{row.value}</b>
+                      </dt>
+                      <dd>{row.text}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </>
+            )}
+            {open.troubleshooting && (
+              <>
+                <h4>트러블슈팅</h4>
+                <p className="detail-note">{open.troubleshooting.note}</p>
+                <ol className="detail-trouble">
+                  {open.troubleshooting.items.map((item, i) => (
+                    <li key={item.title}>
+                      <p className="trouble-title">
+                        <span>{String(i + 1).padStart(2, "0")}</span>
+                        {item.title}
+                      </p>
+                      <dl>
+                        <div><dt>문제</dt><dd>{item.problem}</dd></div>
+                        <div><dt>원인</dt><dd>{item.cause}</dd></div>
+                        <div><dt>해결</dt><dd>{item.fix}</dd></div>
+                        <div><dt>결과</dt><dd>{item.result}</dd></div>
+                      </dl>
+                    </li>
+                  ))}
+                </ol>
               </>
             )}
             {open.roles && (
