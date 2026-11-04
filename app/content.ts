@@ -4,7 +4,7 @@ export const GITHUB = "https://github.com/kwak317";
 export type CaseStudy = {
   title: string;
   tag: string;
-  rows: { label: string; text: string }[];
+  summary: string;
 };
 
 export const strengths: {
@@ -12,7 +12,7 @@ export const strengths: {
   en: string;
   claim: string;
   evidence: string[];
-  story?: { label: string; steps: { label: string; text: string }[] };
+  story?: { label: string; text: string };
   proof?: { value: string; label: string }[];
   proofNote?: string;
   cases?: { label: string; items: CaseStudy[] };
@@ -30,38 +30,22 @@ export const strengths: {
         {
           title: "프로젝트 주제를 두고 엇갈린 의견 조율",
           tag: "팀원 2명",
-          rows: [
-            { label: "문제", text: "2차 프로젝트 초반, 어떤 주제로 갈지를 두고 팀원과 의견이 엇갈렸습니다." },
-            { label: "해결", text: "각자의 안을 밀어붙이기보다 1차 프로젝트에서 검증한 틀을 2차 주제에 접목할 수 있는지 먼저 따져 보았고, 그 틀을 재사용하면 개발 범위와 위험을 줄일 수 있다는 근거를 팀원과 함께 검토했습니다." },
-            { label: "결과", text: "충분히 상의한 끝에 합의했고, 그 결과가 말해봄 Mk.2로 이어져 지금은 실제 도메인에 배포해 운영하고 있습니다." },
-          ],
+          summary: "1차 프로젝트에서 검증한 틀을 재사용하면 범위와 위험을 줄일 수 있다는 근거로 엇갈린 주제 의견을 조율해 합의했고, 그 결과가 지금 운영 중인 말해봄 Mk.2입니다.",
         },
         {
           title: "리뷰에서 나온 빈틈을 머지 전에 고침",
           tag: "PR 리뷰 · 팀원 1명",
-          rows: [
-            { label: "문제", text: "제가 올린 Prompt와 Skill 분리 PR에서, 형식이 다른 템플릿 표기가 검증을 통과해 모델에게 보내는 프롬프트에 그대로 남을 수 있었습니다." },
-            { label: "해결", text: "리뷰를 맡은 팀원이 이 빈틈을 짚고 이슈로 분리했습니다. 저는 후속 작업으로 미루지 않고 같은 PR에서 지원하지 않는 표기를 모두 거절하는 검증과 회귀 테스트를 추가했습니다." },
-            { label: "결과", text: "수정분을 반영해 머지했고 해당 이슈도 함께 닫았습니다." },
-          ],
+          summary: "팀원이 리뷰에서 짚은 템플릿 표기 검증의 빈틈을 후속 작업으로 미루지 않고, 같은 PR에서 검증과 회귀 테스트를 추가해 머지했습니다.",
         },
         {
           title: "팀원 PC에서만 막히던 로컬 로그인 해결",
           tag: "개발 환경 · 팀 전체",
-          rows: [
-            { label: "문제", text: "팀원 PC의 로컬 개발 환경에서 로그인 토큰 검증이 실패해, 로그인이 필요한 기능을 로컬에서 확인할 수 없었습니다." },
-            { label: "해결", text: "컨테이너 안과 밖에서 인증 서버 주소가 다르게 보이는 점을 원인으로 찾아 설정을 고치고, 같은 문제가 다시 생기지 않도록 회귀 테스트와 작업 기록을 남겼습니다." },
-            { label: "결과", text: "팀원이 변경 범위가 로컬 환경으로 제한된 것까지 확인하고 승인해 머지했고, 팀 전체가 같은 로컬 환경에서 개발할 수 있게 됐습니다." },
-          ],
+          summary: "컨테이너 안팎에서 인증 서버 주소가 다르게 보이는 원인을 찾아 설정을 고치고 회귀 테스트를 남겨, 팀 전체가 같은 로컬 환경에서 로그인 기능을 개발할 수 있게 했습니다.",
         },
         {
           title: "기준이 다른 팀원 평가 결과를 한 문서로 취합",
           tag: "품질 평가 · 팀원 2명",
-          rows: [
-            { label: "문제", text: "AI 코칭 응답 30건을 팀원 두 명이 각자 평가했는데, 한 명은 30건 전체를 채점하고 다른 한 명은 15건 채점과 15건 의견을 남겨 범위와 기준이 서로 달랐습니다." },
-            { label: "해결", text: "결과를 한 문서로 모으되 범위가 다른 점수는 합산하지 않았고, AI가 쓴 초안은 사람 점수와 분리했으며, 의견이 갈린 항목은 '미합의'로 남겼습니다." },
-            { label: "결과", text: "팀원이 원점수와 미확인 항목이 분명히 표시된 것을 확인하고 승인했습니다. 숫자를 부풀리지 않고 각자의 작업을 그대로 기록했습니다." },
-          ],
+          summary: "범위와 기준이 다른 팀원 두 명의 30건 평가를 한 문서로 모으되, 점수를 합산하지 않고 AI 초안과 미합의 항목을 분리해 숫자를 부풀리지 않았습니다.",
         },
       ],
     },
@@ -77,20 +61,7 @@ export const strengths: {
     ],
     story: {
       label: "왜 검증이 필요했고, 어떻게 나아졌나",
-      steps: [
-        {
-          label: "왜",
-          text: "처음 후보였던 GPT-5 mini로 평가셋 30건을 돌리자 27건에서 JSON이 중간에 끊겨, 출력 계약을 지킨 응답이 10%뿐이었습니다. 호출은 성공해도 화면에 보여 줄 수 없는 응답이 대부분이었습니다.",
-        },
-        {
-          label: "어떻게",
-          text: "strict JSON Schema로 응답 형식을 고정하고, Pydantic 검증과 답변 원문 인용 대조, 계약 실패 시 횟수를 제한한 재시도를 넣었습니다. 모델과 Prompt는 같은 30건에서 계약 준수, 판정 일치, 지연, 비용을 함께 비교해 골랐습니다.",
-        },
-        {
-          label: "결과",
-          text: "채택한 Gemini 3.5 Flash Lite는 계약 30/30, p95 4.20초였고, 운영 배포 이미지로 30건을 3회 반복한 평가에서도 계약 90/90을 지켰습니다. 비용을 13.3% 줄인 Prompt v5는 판정 일치가 떨어져 올리지 않았습니다.",
-        },
-      ],
+      text: "첫 후보 GPT-5 mini는 평가셋 30건 중 출력 계약을 지킨 응답이 10%뿐이어서, strict JSON Schema·Pydantic 검증·횟수 제한 재시도를 넣고 같은 30건으로 모델과 Prompt를 비교했습니다. 채택한 Gemini 3.5 Flash Lite는 계약 30/30, p95 4.20초, 3회 반복 평가 90/90을 지켰고, 판정 일치가 떨어진 Prompt v5는 보류했습니다.",
     },
     proof: [
       { value: "10% → 100%", label: "출력 계약 준수 (첫 후보 → 채택 모델)" },
@@ -310,7 +281,6 @@ export type MiniProject = {
   name: string;
   kind: string;
   oneLine: string;
-  features: string[];
   tags: Tag[];
   app?: string;
   code: string;
@@ -321,12 +291,7 @@ export const miniProjects: MiniProject[] = [
     id: "music-lens",
     name: "Music Lens",
     kind: "음악 장르 분류",
-    oneLine: "음악 파일을 올리면 10개 장르 중 어디에 가까운지 예측하고, 그렇게 판단한 소리 특징을 함께 보여 주는 앱입니다.",
-    features: [
-      "librosa로 MFCC·템포·스펙트럼 등 57개 특징을 뽑고, GTZAN으로 학습한 RandomForest로 장르별 확률을 계산합니다.",
-      "멜스펙트로그램, 3초 구간별 장르 변화, BPM·에너지·밝기·리듬감 레이더 차트로 예측 근거를 보여 줍니다.",
-      "여러 곡을 한 번에 비교하고, 예측 이력·피드백 저장·결과 공유 링크를 지원합니다.",
-    ],
+    oneLine: "음악 파일에서 librosa로 57개 소리 특징을 뽑아 RandomForest로 10개 장르를 예측하고, 멜스펙트로그램·레이더 차트로 판단 근거를 함께 보여 주는 앱입니다.",
     tags: [
       { name: "librosa", tone: "teal" },
       { name: "scikit-learn", tone: "amber" },
@@ -339,12 +304,7 @@ export const miniProjects: MiniProject[] = [
     id: "store-dashboard",
     name: "컴퓨터 주변기기 매장 운영 대시보드",
     kind: "데이터 대시보드",
-    oneLine: "컴퓨터 소모품 200개 상품 데이터로 매장 현황, 재고, 견적, 고객 추천을 한 화면에서 관리하는 운영 대시보드입니다.",
-    features: [
-      "매출·마진, 월별 방문 추이, 상품군별 재고를 보여 주고 재고 부족 상품은 발주 목록 CSV로 내려받을 수 있습니다.",
-      "고객 니즈에 맞는 상품과 대안을 추천하고, 장바구니로 견적서를 만들며 상담 기록을 남깁니다.",
-      "\"5만원 이하 마우스 찾아줘\" 같은 질문에서 검색어와 가격 조건을 뽑아 검색 도구를 실행하고, 그 과정을 그대로 보여 주는 검색 에이전트를 넣었습니다.",
-    ],
+    oneLine: "컴퓨터 소모품 200개 상품의 매출·재고·견적·고객 추천을 한 화면에서 관리하고, \"5만원 이하 마우스 찾아줘\" 같은 질문을 검색 도구로 처리하는 에이전트를 넣은 대시보드입니다.",
     tags: [
       { name: "pandas", tone: "blue" },
       { name: "Agent", tone: "violet" },
@@ -357,12 +317,7 @@ export const miniProjects: MiniProject[] = [
     id: "dl-model-lab",
     name: "나의 딥러닝 모델 랩",
     kind: "분류 · 회귀",
-    oneLine: "직접 학습한 PyTorch 모델 두 개, 손글씨 숫자 분류 CNN과 서울 자전거 대여 수요 회귀 모델을 한 앱에서 써 볼 수 있습니다.",
-    features: [
-      "업로드하거나 카메라로 찍은 숫자를 MNIST 형식(28×28)으로 바꿔 CNN이 숫자별 확률을 보여 줍니다.",
-      "시간·기온·습도 등 9개 조건을 슬라이더로 바꾸면 대여량을 예측하고, validation MAE로 예상 오차와 시간대별 수요 곡선을 함께 보여 줍니다.",
-      "촬영한 숫자가 작거나 중심에서 벗어나면 오분류가 늘어나는 한계를 확인하고 데이터 증강을 다음 실험으로 정리했습니다.",
-    ],
+    oneLine: "직접 학습한 PyTorch 모델로 손글씨 숫자 분류(CNN)와 서울 자전거 대여 수요 예측(회귀)을 한 앱에서 써 볼 수 있습니다.",
     tags: [
       { name: "PyTorch", tone: "amber" },
       { name: "CNN", tone: "teal" },
@@ -375,11 +330,7 @@ export const miniProjects: MiniProject[] = [
     id: "clip-fashion",
     name: "CLIP 패션 검색",
     kind: "멀티모달 검색",
-    oneLine: "원하는 스타일을 글로 적거나 사진을 올리면 비슷한 패션 아이템을 찾아 주는 멀티모달 검색 앱입니다.",
-    features: [
-      "CLIP(ViT-B/16)으로 패션 이미지를 임베딩해 인덱스를 만들고, 텍스트나 이미지 쿼리와의 유사도로 상위 결과를 고릅니다.",
-      "글과 사진을 같은 벡터 공간에 놓기 때문에 두 가지 검색 방식을 같은 인덱스로 처리합니다.",
-    ],
+    oneLine: "CLIP(ViT-B/16)으로 글과 사진을 같은 벡터 공간에 놓아, 텍스트나 이미지로 비슷한 패션 아이템을 찾는 검색 앱입니다.",
     tags: [
       { name: "CLIP", tone: "violet" },
       { name: "PyTorch", tone: "amber" },
@@ -393,10 +344,6 @@ export const miniProjects: MiniProject[] = [
     name: "BLIP 이미지 캡셔닝",
     kind: "이미지 → 문장",
     oneLine: "사진을 올리면 BLIP이 영어 설명 문장을 만들고, 선택하면 NLLB로 한국어 번역까지 해 주는 앱입니다.",
-    features: [
-      "BLIP base와 large 모델을 고를 수 있고, 무료 서버 메모리를 고려해 base를 기본값으로 두었습니다.",
-      "NLLB-200 번역은 선택 기능으로 분리해, 메모리가 부족해도 영어 캡션은 정상적으로 보여 주도록 했습니다.",
-    ],
     tags: [
       { name: "BLIP", tone: "blue" },
       { name: "NLLB", tone: "green" },
