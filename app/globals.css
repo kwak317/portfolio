@@ -215,7 +215,14 @@ em { font-style: normal; color: var(--accent); }
 .card:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--ink) 30%, transparent); }
 .card { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
 .card .card-body { padding: 32px; }
-.card .more { margin-top: 0; padding-top: 24px; }
+.card-demo { align-self: flex-start; gap: 8px; margin: 24px 0 24px; }
+.card-demo span { transition: transform 0.25s; }
+.card-demo:hover span { transform: translateX(3px); }
+.card-more {
+  align-self: flex-end; padding-top: 0; margin-top: auto; gap: 8px;
+  font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent); cursor: pointer;
+}
 .card-main .card-line { font-size: 1rem; }
 .card-body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
 .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
@@ -363,7 +370,7 @@ em { font-style: normal; color: var(--accent); }
 .can-reveal .card.reveal-pending.is-visible { transition: opacity 0.8s ease, transform 0.35s cubic-bezier(.34, 1.4, .64, 1), border-color 0.2s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .skill, .card, .btn, .more::after { transition: none !important; }
+  .skill, .card, .btn, .more::after, .card-demo span { transition: none !important; }
   .skill:hover, .card:hover, .btn:hover { transform: none; }
   .bouncy span:hover { animation: none; }
 }

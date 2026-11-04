@@ -129,6 +129,7 @@ export type Project = {
   roles?: { area: string; work: string }[];
   stack: string[];
   links: { label: string; href: string }[];
+  demo?: { label: string; href: string };
   video?: { src: string; poster: string; caption: string };
   problem?: { label: string; text: string }[];
   architecture?: { src: string; alt: string; caption: string };
@@ -262,6 +263,7 @@ export const projects: Project[] = [
   "Vercel",
   "Cloud Run",
 ],
+    demo: { label: "로그인 없이 체험하기", href: "/demo/malhaebom" },
     links: [
       { label: "로그인 없이 체험하기", href: "/demo/malhaebom" },
       { label: "실제 서비스에서 연습", href: "https://malhaebom.xyz/app/practice" },
