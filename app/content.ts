@@ -267,6 +267,7 @@ export const miniProjects: MiniProject[] = [
       { name: "CNN", tone: "teal" },
       { name: "Streamlit", tone: "rose" },
     ],
+    app: "https://miniprojectgit-324deds6vhyhjkm7nbrqpe.streamlit.app",
     code: "https://github.com/kwak317/mini_project/tree/main/showcase",
   },
   {
@@ -283,6 +284,7 @@ export const miniProjects: MiniProject[] = [
       { name: "PyTorch", tone: "amber" },
       { name: "Streamlit", tone: "rose" },
     ],
+    app: "https://transformer4-assignment-cl2anom8nfbjwkrngbdj37.streamlit.app",
     code: "https://github.com/kwak317/transformer4-assignment/tree/main/lab6_clip_multimodal_fashion_search",
   },
   {
@@ -299,6 +301,7 @@ export const miniProjects: MiniProject[] = [
       { name: "NLLB", tone: "green" },
       { name: "Transformers", tone: "violet" },
     ],
+    app: "https://transformer4-assignment-qutw8keyfjugbue8festsj.streamlit.app",
     code: "https://github.com/kwak317/transformer4-assignment/tree/main/lab9_image_captioning",
   },
 ];
