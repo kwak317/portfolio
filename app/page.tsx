@@ -120,14 +120,7 @@ export default function Home() {
                 {item.story && (
                   <div className="strength-story">
                     <p className="strength-story-label">{item.story.label}</p>
-                    <dl className="story-steps">
-                      {item.story.steps.map((step) => (
-                        <div key={step.label}>
-                          <dt>{step.label}</dt>
-                          <dd>{step.text}</dd>
-                        </div>
-                      ))}
-                    </dl>
+                    <p>{item.story.text}</p>
                   </div>
                 )}
                 {item.proof && (
@@ -146,20 +139,13 @@ export default function Home() {
                 {item.cases && (
                   <div className="cases">
                     <p className="strength-story-label">{item.cases.label}</p>
-                    {item.cases.items.map((c, i) => (
-                      <details className="case" key={c.title} open={i < 2}>
+                    {item.cases.items.map((c) => (
+                      <details className="case" key={c.title} open>
                         <summary>
                           <span className="case-title">{c.title}</span>
                           <span className="case-tag">{c.tag}</span>
                         </summary>
-                        <dl>
-                          {c.rows.map((row) => (
-                            <div key={row.label}>
-                              <dt>{row.label}</dt>
-                              <dd>{row.text}</dd>
-                            </div>
-                          ))}
-                        </dl>
+                        <p className="case-text">{c.summary}</p>
                       </details>
                     ))}
                   </div>
@@ -211,11 +197,6 @@ export default function Home() {
                   <span className="card-kind">{item.kind}</span>
                 </div>
                 <p className="card-line">{item.oneLine}</p>
-                <ul className="mini-features">
-                  {item.features.map((line) => (
-                    <li key={line}>{line}</li>
-                  ))}
-                </ul>
                 <ul className="tags" aria-label="사용 기술">
                   {item.tags.map((tag) => (
                     <li key={tag.name} className={`tag tone-${tag.tone}`}>
