@@ -54,7 +54,13 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
                   </li>
                 ))}
               </ul>
-              <button className="more" type="button" onClick={() => show(project)}>
+              {project.demo && (
+                <a className="btn btn-solid card-demo" href={project.demo.href}>
+                  {project.demo.label}
+                  <span aria-hidden="true">→</span>
+                </a>
+              )}
+              <button className="btn card-more" type="button" onClick={() => show(project)}>
                 자세히 보기
               </button>
             </div>
