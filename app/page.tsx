@@ -140,7 +140,7 @@ export default function Home() {
                   <div className="cases">
                     <p className="strength-story-label">{item.cases.label}</p>
                     {item.cases.items.map((c) => (
-                      <details className="case" key={c.title} open>
+                      <details className="case" key={c.title}>
                         <summary>
                           <span className="case-title">{c.title}</span>
                           <span className="case-tag">{c.tag}</span>
